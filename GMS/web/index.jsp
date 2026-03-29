@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
   <head>
-      <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+      <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -12,7 +12,7 @@
     <meta name="keywords" content="admin template, robust admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
     <title>:ticketR - Login Page</title>
-    
+
     <link rel="apple-touch-icon" href="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" href="/assets/icons/title.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700" rel="stylesheet">
@@ -32,39 +32,42 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="https://pixinvent.com/bootstrap-admin-template/robust/assets/css/style.css">
     <!-- END Custom CSS-->
-     <!-- ---------------------------GET PUBLIC IP GET -------------- -->	
+     <!-- ---------------------------GET PUBLIC IP GET -------------- -->
 		<script type="text/javascript">
 		function myonload(){
-			 document.getElementById("ip").value = myip; 
+			 if (typeof myip !== "undefined") {
+			 	document.getElementById("ip").value = myip;
+			 }
 		}
-                .input-icons i { 
-            position: absolute; 
-        } 
-          
-        .input-icons { 
-            width: 100%; 
-            margin-bottom: 10px; 
-        } 
-          
-        .icon { 
-            padding: 10px; 
-            min-width: 40px; 
-        } 
-          
-        .input-field { 
-            width: 100%; 
-            padding: 10px; 
-            text-align: center; 
-        } 
 		</script>
-		  <script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script> 
+		<style type="text/css">
+		.input-icons i {
+			position: absolute;
+		}
+
+		.input-icons {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.icon {
+			padding: 10px;
+			min-width: 40px;
+		}
+
+		.input-field {
+			width: 100%;
+			padding: 10px;
+			text-align: center;
+		}
+		</style>
+		  <script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
 	<!-- -----------IP END -->
 <!--==============================content=================================-->
   </head>
   <body onload="myonload()" class="vertical-layout vertical-menu 1-column   menu-expanded blank-page blank-page" data-open="click" data-menu="vertical-menu" data-col="1-column">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-   
-                    </div
+
     <div class="app-content content">
       <div class="content-wrapper">
         <div class="content-header row">
@@ -73,9 +76,9 @@
     <div class="col-12 d-flex align-items-center justify-content-center">
         <div class="col-md-4 col-10 box-shadow-2 p-0">
             <div class="card border-grey border-lighten-3 m-0">
-                
+
                 <div class="card-header border-0" style="background-color: #ffffff;">
-                    
+
                     <div class="card-title text-center">
                         <div class="p-1"><img src="/img/logo.png" style="width: 350px;height: 150px;" alt="branding logo"></div>
                     <div class="p-1"><img src="/assets/24.jpg" style="width: 150px;height: 150px;" alt="branding logo"></div>
@@ -97,7 +100,7 @@
                                 <div class="form-control-position">
                                     <i class="fa fa-key"></i>
                                 </div>
-                               
+
                             </fieldset>
                             <div class="form-group row">
                                 <div class="col-md-6 col-12 text-center text-md-left">
@@ -107,7 +110,7 @@
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-12 text-center text-md-right"><a href="/userregister" class="card-link">New User Register</a></div>
-                        
+
                             </div>
                             <button type="submit" class="btn btn-info btn-lg btn-block">
                                 <i class="fa fa-lock"></i> Login</button>
@@ -117,7 +120,7 @@
                 <div class="card-footer">
                     <div class="">
                         <p class="float-sm-left text-center m-0">All rights reserved @ <a href="#" class="card-link">ticketR</a></p>
-                        
+
                     </div>
                 </div>
             </div>
@@ -145,4 +148,4 @@
     <script src="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/js/scripts/forms/form-login-register.min.js"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
-<</html>
+</html>

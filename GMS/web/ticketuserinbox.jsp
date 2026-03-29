@@ -573,7 +573,7 @@
 
 				
 	
-	<a  href="/auth/empdownloadServlet?filepath=<%=arr%>"><%=j++%> . Download - <%String[] splits = arr.split("/");%><%=splits[7]%> </a><br/>
+	<a  href="/auth/empdownloadServlet?filepath=<%=arr%>"><%=j++%> . Download - <%String[] splits = arr.split("/");%><%=splits[splits.length - 1]%> </a><br/>
 			
 					<%arrlist.add(arr);%>
 					
@@ -590,7 +590,7 @@
 		<%
 			}else{
 		%>
-			<a  href="/auth/empdownloadServlet?filepath=<%=path%>"> Download -<%String[] splits = path.split("/");%><%=splits[7]%> </a>
+			<a  href="/auth/empdownloadServlet?filepath=<%=path%>"> Download -<%String[] splits = path.split("/");%><%=splits[splits.length - 1]%> </a>
 		<%
 	}
 	}

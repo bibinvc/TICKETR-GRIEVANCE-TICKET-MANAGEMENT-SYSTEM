@@ -58,21 +58,19 @@ public class TicketAuthFilter implements Filter {
 	 System.out.println("url :"+ticketreqUrl);
 		
 	 if(ticketreqUrl.startsWith("/ticketauth")) {
-		 if(ticketsesion.getAttribute("/ticket")!=null && ticketsesion.getAttribute("/ticket").equals("true")) {
+		 if(ticketsesion.getAttribute("login")!=null && ticketsesion.getAttribute("login").equals("true")) {
 			 chain.doFilter(request, response);
 		 }else {
 			 res.sendRedirect("/ticket");
-			 
 		 }
-		 
-	 }else if(ticketreqUrl.startsWith("/ticket")) {
-		 if(ticketsesion.getAttribute("/ticket")!=null && ticketsesion.getAttribute("/ticket").equals("true")) {
+	 } else if(ticketreqUrl.startsWith("/ticket")) {
+		 if(ticketsesion.getAttribute("login")!=null && ticketsesion.getAttribute("login").equals("true")) {
 			 res.sendRedirect("/ticketUserLogOut");
-		 }else {
+		 } else {
 			 chain.doFilter(request, response);
 		 }
-	 }else {
-	 	chain.doFilter(request, response);
+	 } else {
+		 chain.doFilter(request, response);
 	 }
 		
 		

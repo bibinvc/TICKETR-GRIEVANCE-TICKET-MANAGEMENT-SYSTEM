@@ -52,9 +52,8 @@ public class NewTaskReg extends HttpServlet {
 	    private static int finaloderid;
 	    private static int ordeno ;
 	    private static String manul_odid = null;
-	    private String newament       ="/usr/share/ChangeApp/recivefile/ticketfiles/";
-       
-     private String host;
+		private String newament = System.getProperty("user.dir") + File.separator + "ticketfiles" + File.separator;
+    private String host;
     private String port;
     private String user;
     private String pass;

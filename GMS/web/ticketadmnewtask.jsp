@@ -41,6 +41,13 @@
   <body class="vertical-layout vertical-menu 2-columns fixed-navbar menu-expanded pace-done" data-open="click" data-menu="vertical-menu" data-col="2-columns"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
   <%HttpSession session1 = request.getSession(false);
   String name = (String)session1.getAttribute("username");
+  String currentPath = request.getRequestURI();
+  boolean userView = currentPath != null && currentPath.contains("/auth/ticketusernewtask");
+  String dashboardPath = userView ? "/auth/userticketdash" : "/auth/admticketdash";
+  String inboxPath = userView ? "/auth/userticketinbox" : "/auth/admticketinbox";
+  String newTaskPath = userView ? "/auth/ticketusernewtask" : "/auth/ticketadmnewtask";
+  String taskRegistrationPath = userView ? "/auth/usertaskregisteration" : "/auth/admtaskregisteration";
+  String userDataPath = userView ? "/usergetticketuserdatas" : "/admgetticketuserdatas";
   %>
   
   <div class="pace-progress-inner"></div>
@@ -84,14 +91,14 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           <!-- <li class="nav-item has-sub"><a href="ticketdash"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2">5</span></a>
            -->
-           <li class=" nav-item"><a href="/auth/admticketdash"><i class="icon-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">Dashboard</span></a>
+           <li class=" nav-item"><a href="<%=dashboardPath%>"><i class="icon-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">Dashboard</span></a>
            
             
           </li>
           
            
          
-           <li class="nav-item"><a href="/auth/admticketinbox"><i class="icon-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">My Inbox</span></a>
+           <li class="nav-item"><a href="<%=inboxPath%>"><i class="icon-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">My Inbox</span></a>
          
           
            
@@ -101,7 +108,7 @@
           
           
           <!-- <li class="nav-item has-sub"><a href="newtaskreg"><i class="icon-list"></i><span class="menu-title" data-i18n="nav.navbars.main">Task</span><span class="badge badge badge-success float-right mr-2">New</span></a> -->
-          <li class="active nav-item"><a href="/auth/ticketadmnewtask"><i class="icon-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">New Task</span></a>
+          <li class="active nav-item"><a href="<%=newTaskPath%>"><i class="icon-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">New Task</span></a>
           
              
           </li>
@@ -128,7 +135,7 @@
 <div class="card-content collapse show">
 	                <div class="card-body">
 
-	                    <form class="form form-horizontal row-separator" method="post" id="myForm" action="/auth/admtaskregisteration" enctype="multipart/form-data">
+	                    <form class="form form-horizontal row-separator" method="post" id="myForm" action="<%=taskRegistrationPath%>" enctype="multipart/form-data">
 	                    
 	                    <input type="hidden"  name="from" value="<%=name%>"/>
 	                    
@@ -774,7 +781,7 @@ jQuery(function(){
 	   
 	   var name = "<%=name%>";
    $.ajax({
-		url: "/getticketuserdatas",
+		url: "<%=userDataPath%>",
 		type : 'get',
 		cache : false,
 		contentType:"application/json", 
@@ -804,7 +811,7 @@ jQuery(function(){
    $("#to").change(function(){
 	      var fname = $("#to").val();
 		 	 $.ajax({
-				url: "/getticketuserdatas",
+				url: "<%=userDataPath%>",
 				type : 'get',
 				cache : false,
 				contentType:"application/json", 

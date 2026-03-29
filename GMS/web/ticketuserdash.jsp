@@ -590,7 +590,7 @@
     </div>
     <div class="buy-now">
     <!--  <a href="https://goo.gl/J1RsWj" target="_blank" class="btn bg-gradient-directional-purple white btn-purple btn-glow px-2">Buy Now</a> --> 
-    <a href="/auth/newtaskreg"  class="btn bg-gradient-directional-purple white btn-purple btn-glow px-2">New Task</a>
+    <a href="/auth/ticketusernewtask"  class="btn bg-gradient-directional-purple white btn-purple btn-glow px-2">New Task</a>
     </div>
 
     <footer class="footer footer-static footer-light navbar-border">
